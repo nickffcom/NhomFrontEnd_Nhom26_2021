@@ -1,0 +1,20 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+    <label>
+      Name:
+      <input type="text" formControlName="name" required>
+    </label>
+    <span *ngIf="profileForm.controls.name.invalid" class="errorcolor">Cần phải nhập tên</span>
+ 
+    <label>
+       Age:
+      <input type="profileForm" formControlName="age" required>
+     
+    </label>
+   
+    <span *ngIf="profileForm.controls.age.invalid" class="errorcolor">Cần phải nhập mk</span>
+  
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    
+  </form>
+    
