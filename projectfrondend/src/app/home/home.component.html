@@ -1,0 +1,26 @@
+
+<h3>Chao ban {{name | lowercase}} </h3>
+<!-- <span *ngIf="age < 18" class="underAge">Bạn dưới 18 tuổi</span> -->
+<!-- <br> -->
+<!-- <span *ngIf="age > 18" class="overAge">Bạn trên 18 tuổi</span>
+<span *ngIf="age == 18" class="overAge">Bạn bằng 18 tuổi</span> -->
+<ng-template #condition2 >Bạn trên hoặc bằng 18 tuổi</ng-template>
+<ng-template #condition1 >Bạn bé hơn 18 tuổi</ng-template>
+<br>
+<span *ngIf="age<18;then condition1;else condition2"></span>
+<br>
+<span appBold>Bạn đã {{age}}</span>
+<br>    
+<!-- khai bao Module Form o trong app.module .ng Model thay đổi ở html => typescript--> 
+<input  [(ngModel)]="name" type="text">
+<br>
+Danh sách Xe : <br>
+<!-- sự kiện xử lý liên kết  -->
+<button (click)="tangTuoi()">Tăng tuổi</button>
+<div>
+    <select name="" id="">
+        <option value="" *ngFor="let vehicle of vehicles" >{{vehicle}}</option>
+    </select>
+</div>
+<span>{{vehicles | json}}</span>
+<div>------------------------web quan li sinh vien--------------</div>

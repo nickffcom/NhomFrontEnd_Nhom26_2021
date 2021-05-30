@@ -1,0 +1,62 @@
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+  
+    <label>
+      id:
+      <input type="text" formControlName="id" required>
+    </label>
+ <br>
+    <label>
+       code:
+      <input type="studentForm" formControlName="code" required>
+     
+    </label>
+    <br>
+    <label>
+        gender:
+       <input type="studentForm" formControlName="gender" required>
+      
+     </label>
+     <br>
+     <label>
+        firstname:
+       <input type="studentForm" formControlName="firstName" required>
+      
+     </label>
+     <br>
+     <label>
+        lastname:
+       <input type="studentForm" formControlName="lastName" required>
+      
+     </label>
+     <br>
+     <label>
+        dob:
+       <input type="studentForm" formControlName="dob" required>
+      
+     </label>
+     <br>
+     <label>
+        email:
+       <input type="studentForm" formControlName="email" required>
+      
+     </label>
+     <br>
+     <label>
+        phone:
+       <input type="studentForm" formControlName="phone" required>
+      
+     </label>
+     <br>
+     <label>
+        picture:
+       <input type="studentsForm" formControlName="picture" required>
+      
+     </label>
+     <br>
+   
+
+  
+    <button type="submit" [disabled]="!studentForm.valid">Submit</button>
+    
+  </form>
+    

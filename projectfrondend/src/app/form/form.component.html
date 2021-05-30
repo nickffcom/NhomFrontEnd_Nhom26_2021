@@ -1,0 +1,21 @@
+
+<div class="container">
+    <form action="" (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <div class="form-group group1">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" required 
+            [(ngModel)]="name" name="name">
+            <span *ngIf="name === ''" class="errorcolor">Cần phải nhập tên</span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" 
+            [(ngModel)]="password" name="password" required>
+            <span *ngIf="password === ''" class="errorcolor" >Cần phải nhập mk</span>
+
+        </div>
+        <button type="submit" class="btn btn-success"  [disabled]="!myForm.form.valid">Submit</button>
+      
+    </form>
+ 
+</div>

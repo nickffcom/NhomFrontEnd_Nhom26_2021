@@ -1,1 +1,23 @@
+<!-- 
+<mat-toolbar color="primary" class="nav-height">
+
+</mat-toolbar>
+<mat-slidenav-container>
+    <mat-sidenav #sidenav (closed)="closeLeftSide()">
+        <mat-nav-list>
+            
+        </mat-nav-list>
+
+    </mat-sidenav>
+</mat-slidenav-container> -->
+<a [routerLink]="['/home']" routoerLinkActive="router-link-active">Đi tới Home</a>
+&nbsp;|&nbsp;
+<a [routerLink]="['/about']" routoerLinkActive="router-link-active">Đi tới About</a>
+&nbsp;|&nbsp;
+<a [routerLink]="['/form']" routoerLinkActive="router-link-active">Đi tới Form</a>
+&nbsp;|&nbsp;
+<a [routerLink]="['/reactive-form']" routoerLinkActive="router-link-active">Đi tới React- Form</a>
+&nbsp;|&nbsp;
+<a [routerLink]="['/students']" routoerLinkActive="router-link-active">Đi tới Students</a>
+<!--  -->
 <router-outlet></router-outlet>
