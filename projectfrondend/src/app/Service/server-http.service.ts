@@ -29,7 +29,7 @@ export class ServerHttpService {
   }
 
 
-
+//cái này copy trn kia
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
