@@ -1,0 +1,75 @@
+body{
+    
+    color: #313131;
+    font-family: "Roboto",sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Internet-group-chat.svg/768px-Internet-group-chat.svg.png);
+    background-size: cover;
+    background-position: center center ;
+    overflow: hidden;
+   
+}
+.input-group{
+
+    margin: 2rem 0;
+    position: relative;
+}
+.container{
+    background-color: white;
+    padding: 1rem 2rem;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+    border-radius: 1rem;
+}
+.container h2{
+    text-align: center;
+    font-weight: 400;
+    user-select: none;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.container input{
+    border: none;
+    border-bottom: 1px solid dodgerblue;
+    outline: none;
+    padding: 6px 4px;
+    display: block;
+    margin:6px auto;
+}
+.container label{
+    position: absolute;
+    left: 29px;
+    top: 4px;
+    font-weight: 400;
+    font-size: 15px;
+    pointer-events: none;
+    color: gray;
+    transition: 200 ease;
+
+}
+input:focus + label,input:valid+label{
+    top: -9px;
+    font-size: 13px;
+    color: dodgerblue;
+}
+ button{
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    padding: 1rem 1rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 20px;
+    transition: 200ms;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.5);
+}
+.container p{
+font-weight: 300;
+font-size: 14px;    
+text-align: center;
+margin-top: 2rem;
+}
+.container a{
+    color: dodgerblue;
+}
