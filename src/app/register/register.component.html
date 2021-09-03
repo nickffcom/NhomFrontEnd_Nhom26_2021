@@ -22,7 +22,7 @@
             <input type="password" id="repeatpassword" required>
             <label for="repeatpassword">RepeatPassword</label>
             </div>
-        <button type="submit" >Register</button>
+        <button type="submit" (click)="register()">Register</button>
         <p>Do you want login? <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a></p>
     </div>
     
