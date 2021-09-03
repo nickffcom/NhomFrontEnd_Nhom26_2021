@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ChatsoloComponent } from './chatsolo/chatsolo.component';
+import { ChatroomComponent } from './chatroom/chatroom.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ChatsoloComponent } from './chatsolo/chatsolo.component';
     LoginComponent,
     RegisterComponent,
     ChatsoloComponent,
+    ChatroomComponent,
     
     
     
