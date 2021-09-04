@@ -1,20 +1,57 @@
 /* header bar */
+body {
+    background: #C5DDEB;
+    font: 14px/20px "Lato", Arial, sans-serif;
+    padding: 40px 0;
+    color: black;
+  }
 .header__navbar {
     background-color: var(--white-color);
     box-shadow: 0 0 3px 0 black;
     display: flex;
     flex-direction: column;
-   
-
-   
-   
+   margin-right: 15px;
+   height: 600px;
 }
+.chat-with {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .chat-num-messages {
+    color: grey;
+  }
+  textarea {
+    width: 100%;
+    border: none;
+    padding: 10px 20px;
+    font: 14px/22px "Lato", Arial, sans-serif;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    resize: none;
+    
+  }
+  .fa-file-o, .fa-file-image-o {
+    font-size: 16px;
+    color: gray;
+    cursor: pointer;
+    
+  }
+
+.container {
+    margin: 50px auto;
+   width: 100%;
+    background: #F5F7FB;
+    border-radius: 5px;
+    height: 700px;
+  }
+
 
 .header__navbar-list {
     list-style: none;
-    margin-left: 0px;
-    padding-top: 0px;
+    // margin-left: 0px;
+    // padding-top: 0px;
     margin-top: -10px;
+
     
 }
 .header__navbar-list-link {
@@ -24,16 +61,19 @@
     
 }
 .header__navbar-list-item {
-    padding-top: 45px;
+    padding-top: 35px;
     position: relative;
-    /* padding-right: 20px; */
-    
+   
+    align-items: center;
+    text-align: center;
+    margin-right: 37px;
     
     
 }
 .header__navbar-list-icon {
-    color:  var( --text-color);
+    // color:  var( --text-color);
     font-size: 22px;
+    color: black;
   
     
 }
@@ -209,7 +249,7 @@
     justify-content: space-between;
     height: 88px;
     margin-left: -33px;
-    border-bottom: 1px solid #bbbbbe;;
+   
 }
 .active {
     width: 10px;
@@ -327,4 +367,17 @@ html {
     height: 442px;
     overflow: scroll;
     border: 1px solid #ccc;
+}
+.send{
+    float: right;
+    color: blue;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: #F2F5F8;
+    &:hover {
+        color: darken(blue, 7%);
+      }
 }
