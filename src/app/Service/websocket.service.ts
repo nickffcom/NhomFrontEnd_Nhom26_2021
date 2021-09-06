@@ -14,6 +14,8 @@ export class WebsocketService {
   constructor(private router:Router,private userService:UserService) {
     this.getMessageFromServer();
    }
+
+
    RegisterToServer(username:string,password:string){
     let data={
       "action": "onchat",
@@ -28,6 +30,22 @@ export class WebsocketService {
    this.ws.next(data);
    }
    
+   LoginToServer(username: string, password: string) {
+    let data = {
+      "action": "onchat",
+      "data": {
+        "event": "LOGIN",
+        "data": {
+          "user": username,
+          "pass": password
+        }
+      }
+    }
+    // This will send a message to the server once a connection is made. Remember value is serialized with JSON.stringify by default!  
+    this.ws.next(data);
+  }
+
+
    getMessageFromServer() {
     this.ws.subscribe((msg:any)=>{
       // let event = Object.values(msg)[0]; 
@@ -38,9 +56,15 @@ export class WebsocketService {
         case 'REGISTER':
           let statusRegister=msg.status;
          
-          this.checkRegister(statusRegister);
+          this.checkRegister(statusRegister,msg.mes);
          break;
-        
+         case 'LOGIN':
+          // let status: string = Object.values(msg)[2] as string;
+          // let mes: string = Object.values(msg)[1] as string;
+          let statuss=msg.status;
+          console.log(msg);
+          this.checkLogin(statuss,msg.mes);
+          break;
         default:
 
       }
@@ -50,17 +74,32 @@ export class WebsocketService {
 
 
     // hàm check satus register
-    checkRegister(status:string){
+    checkRegister(status:string,msg:string){
       if(status=="success"){
         alert("Bạn đã đăng kí thành công")
-
+       this.router.navigate(['/login']);
       }else{
-        alert("Tài khoản đã tồn tại "+status)
+        alert("Lỗi: "+msg)
 
       }
 
     }
+     
+    checkLogin(status:string,msg:string){
+      if(status=="success"){
+        let username=localStorage.getItem('username') as string;
+        let password=localStorage.getItem('password') as string;
+        this.router.navigate(['/chatsolo']);
+        let user: User = new User(username, password);
+        //parse user thanh string de luu local
+      this.userService.setCurrentUser(user);
+      // localStorage.removeItem('username');
+      // localStorage.removeItem('password');
+       } else if (status == "error") {
+        alert(""+msg)
+        }
 
+      }
 
     } // ngoặc kết thúc classss
 
