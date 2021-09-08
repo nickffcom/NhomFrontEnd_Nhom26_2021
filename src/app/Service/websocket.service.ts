@@ -65,7 +65,38 @@ export class WebsocketService {
           console.log(msg);
           this.checkLogin(statuss,msg.mes);
           break;
+          case 'SEND_CHAT':
+
+             let r=msg.data.type;
+             if(r==0){
+              console.log("chat solo");
+              let message = msg.data.mes;
+              let name = msg.data.name;
+              let namelocal = localStorage.getItem('friendName');
+              
+            
+                if(namelocal==name){
+                  console.log("@@");       
+                  var linknode = document.createElement("p");
+                var chat = document.getElementById("content__chat") as HTMLElement ;
+                linknode.style.alignSelf="flex-end";
+                linknode.style.backgroundColor="#1877F2";
+                linknode.style.borderRadius="50px";
+                linknode.style.color="white";
+                linknode.style.margin="0";
+                linknode.style.marginTop="5px";
+                linknode.style.padding="10px";
+                linknode.innerHTML+=message+"<br>";
+                chat.appendChild(linknode);
+
+                }
+
+             }
+            break;
+            
+        
         default:
+          
 
       }
 
@@ -99,6 +130,37 @@ export class WebsocketService {
         alert(""+msg)
         }
 
+      }
+      sendChatToServer(friend: string, mess: string) {
+        let data = {
+          "action": "onchat",
+          "data": {
+            "event": "SEND_CHAT",
+            "data": {
+              "type": "people",
+              "to": friend,
+              "mes": mess
+            }
+          }
+        };
+      
+          var linknode = document.createElement("p");
+          var chat = document.getElementById("content__chat") as HTMLElement ;
+          var minichat =document.getElementById("chatmini") as HTMLElement;
+          minichat.innerHTML=mess;
+          linknode.style.alignSelf="flex-start";
+          linknode.style.backgroundColor="#CFD1D5";
+          linknode.style.color="black"; 
+          linknode.style.borderRadius="50px";
+          linknode.style.margin="0";
+          linknode.style.marginTop="5px";
+          linknode.style.padding="10px";
+          linknode.style.textAlign="center";
+          linknode.innerHTML+="  <img src=\"../../assets/neymar4.jpg\" alt=\"\" style=\"width: 30px;height: 25px;border-radius: 50%;\">"+mess+"<br>";
+            chat.append(linknode);
+        
+       
+        this.ws.next(data);
       }
 
     } // ngoặc kết thúc classss
