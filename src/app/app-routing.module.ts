@@ -8,7 +8,8 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
   {path:"chatsolo",component:ChatsoloComponent},
-  {path:"chatroom",component:ChatroomComponent}
+  {path:"chatroom",component:ChatroomComponent},
+  {path:"chatsolo/:id",component:ChatsoloComponent}
 
 ];
 
