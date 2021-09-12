@@ -168,6 +168,7 @@
                 <div class="header__chat-name-div">
                 <span class="header__chat-name-fullname">{{user}}</span>
                 <div class="active"></div>
+                <div class="danghoatdong">Đang hoạt động</div>
             </div>
                 
     
@@ -193,11 +194,11 @@
           
           </div>
             <!-- CHATTTTTTTTT -->
-            <div id="content__chat" style="height: 450px;width: 100%; border: solid 0.5px;display: flex;flex-direction: column;">
+            <div id="content__chat" style="width: 94%; border: solid 0.5px;display: flex;flex-direction: column;">
                 
             </div>
             <div class="inputgroup"  style="display: flex;">
-                <input type="text" width="100%" style="margin-top: 9px;width: 91%;padding: 10px;outline: none;" id="sendMessage" #mess (keyup.enter)="sendMessage(mess)" >
+                <input type="text" width="100%" style="margin-top: 9px;width: 90%;padding: 10px;outline: none;" id="sendMessage" #mess (keyup.enter)="sendMessage(mess)" >
                 <button style="padding: 10px; cursor: pointer;color: darkcyan;">Send</button>
             </div>
       </div>

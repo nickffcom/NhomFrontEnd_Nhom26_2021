@@ -249,8 +249,16 @@ body {
     display: flex;
     justify-content: space-between;
     height: 88px;
-    margin-left: -33px;
+    width: 97%;
+    border: 1px solid #3333;
+    position: relative;
+    
+    
    
+}
+.danghoatdong{
+    position: absolute;
+    bottom: 0;
 }
 .active {
     width: 10px;
@@ -364,8 +372,8 @@ html {
     background: white;
     color: white;
     padding: 15px;
-    width: 790px;
-    height: 442px;
+    width: 94%;
+    height: 493px;
     overflow: scroll;
     border: 1px solid #ccc;
 }
