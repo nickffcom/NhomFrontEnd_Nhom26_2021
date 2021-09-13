@@ -249,16 +249,8 @@ body {
     display: flex;
     justify-content: space-between;
     height: 88px;
-    width: 97%;
-    border: 1px solid #3333;
-    position: relative;
-    
-    
+    margin-left: -33px;
    
-}
-.danghoatdong{
-    position: absolute;
-    bottom: 0;
 }
 .active {
     width: 10px;
@@ -372,8 +364,8 @@ html {
     background: white;
     color: white;
     padding: 15px;
-    width: 94%;
-    height: 493px;
+    width: 790px;
+    height: 442px;
     overflow: scroll;
     border: 1px solid #ccc;
 }
@@ -389,4 +381,12 @@ html {
     &:hover {
         color: darken(blue, 7%);
       }
+}
+.khungchat{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 350px;
+    left: 1600px;
+    background-color: red;
 }

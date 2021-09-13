@@ -168,7 +168,6 @@
                 <div class="header__chat-name-div">
                 <span class="header__chat-name-fullname">{{user}}</span>
                 <div class="active"></div>
-                <div class="danghoatdong">Đang hoạt động</div>
             </div>
                 
     
@@ -194,12 +193,36 @@
           
           </div>
             <!-- CHATTTTTTTTT -->
-            <div id="content__chat" style="width: 94%; border: solid 0.5px;display: flex;flex-direction: column;">
-                
+            <div id="content__chat" style="height: 450px;width: 100%; border: solid 0.5px;display: flex;flex-direction: column;">
+
+
             </div>
             <div class="inputgroup"  style="display: flex;">
-                <input type="text" width="100%" style="margin-top: 9px;width: 90%;padding: 10px;outline: none;" id="sendMessage" #mess (keyup.enter)="sendMessage(mess)" >
-                <button style="padding: 10px; cursor: pointer;color: darkcyan;">Send</button>
+                <input type="text" width="100%" style="margin-top: 9px;width: 91%;padding: 10px;outline: none;" id="sendMessage" #mess (keyup.enter)="sendMessage(mess)" (click)="hidden()" (keyup)="changeicon()" editor/>
+                <div class="data-icon" (click)="enableorDisableIcon()" >
+                    <i style="font-size:1.4rem;margin:15px 8px" class="fas fa-comments"></i>
+                </div>
+                <div *ngIf="showicon">
+                    <div class="khungchat">
+                    <h3>Biểu tượng cảm xúc và icon </h3>
+                    <div class="clearfix">
+                     <div class="khungchat-icon" role="button">
+
+                      <img src="{{icon.src}}" alt="{{icon.ALT}}" width="28px" height="28px" id="Imagenek" *ngFor="let icon of ListIcon;index as i" (click)=addIcon(i) (click)="changeicon()"  >
+
+                     </div>
+
+                    </div> 
+
+                    </div>
+
+                   </div>
+                   
+                <button id="SEND" style="padding: 10px; cursor: pointer;color: darkcyan;">
+                  
+                   <img  id="ImgLike"src="../../assets/like.png" style="width: 28px;height:28px;" alt="">
+                   
+                </button>
             </div>
       </div>
     
