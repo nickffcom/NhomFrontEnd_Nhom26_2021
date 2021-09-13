@@ -8,9 +8,11 @@ import { WebsocketService } from '../Service/websocket.service';
 })
 export class RegisterComponent implements OnInit {
 
+   public title:string="";
   constructor(private ws: WebsocketService) { }
 
   ngOnInit(): void {
+    this.reset();
   }
   register(){ // bắt sự kiện khi ấn nút đăng ký từ (onclick)
     let Iusername=document.getElementById("username") as HTMLInputElement;
@@ -21,5 +23,10 @@ export class RegisterComponent implements OnInit {
     this.ws.RegisterToServer(username,password);
 
   }
+  reset(){
+    let noti = document.getElementById("notify-register") as HTMLElement;
+    noti.style.display="none";
+  }
+   
 
 }

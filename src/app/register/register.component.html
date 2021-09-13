@@ -6,9 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập</title>
     <link rel="stylesheet" href="register.component.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 </head>
 <body>
     <div class="container">
+        <div id="notify-register">
+        <div class="notify" >
+            <div class="notify-first">
+             <i  id="title-icon"></i>
+            </div>
+            <div class="notify-second">
+                <h3 class="notify-second-title" id="title-notify"></h3>
+                <p class="notify-second-body"id="title-body"></p>
+            </div>
+            <div class="notify-three">
+             <i class="far fa-window-close notify-icon"></i>
+            </div>
+         </div>
+    </div>
         <h2>Welcome to AppChat</h2>
        <div class="input-group">
            <input type="text" id="username" required>

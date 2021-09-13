@@ -106,11 +106,41 @@ export class WebsocketService {
 
     // hàm check satus register
     checkRegister(status:string,msg:string){
+      let noti = document.getElementById("notify-register") as HTMLElement;
+      let icon = document.getElementById("title-icon") as HTMLElement;
+      let titlenotify = document.getElementById("title-notify") as HTMLElement;
+      let titlebody = document.getElementById("title-body") as HTMLElement;
+      
       if(status=="success"){
-        alert("Bạn đã đăng kí thành công")
-       this.router.navigate(['/login']);
+        //alert("Bạn đã đăng kí thành công")
+        noti.style.display="Block";
+        noti.style.backgroundColor="#82c91e"; // màu xan
+        titlenotify.innerText="Đăng Ký Thành Công";
+        titlebody.innerText="Hãy Đăng Nhập Để Trải Nghiệm Ngay";
+        noti.style.height="70px";
+        icon.className="fas fa-check-circle";
+        console.log("Đăng ký thành công"+msg);
+        setTimeout(() => {
+          noti.style.display="none";
+          this.router.navigate(['/login']);
+        }, 1111500);
+       
       }else{
-        alert("Lỗi: "+msg)
+        console.log("Đăng ký thất bại");
+        noti.style.display="Block"; 
+        noti.style.backgroundColor="#df2938"; // màu đỏ df2938
+        noti.style.borderLeftColor="Black";
+        noti.style.height="70px";
+        icon.className="fas fa-exclamation-triangle";  // icon thất bại
+        titlenotify.innerText="Thất Bại ";
+        titlebody.innerText=msg;  
+
+        setTimeout(() => {
+          noti.style.display="None";
+          this.router.navigate(['/register']);
+        }, 211000);
+      
+       
 
       }
 

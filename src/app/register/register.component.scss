@@ -73,3 +73,38 @@ margin-top: 2rem;
 .container a{
     color: dodgerblue;
 }
+.notify{
+ display: flex;
+ align-items: center;
+}
+#notify-register{
+    display: none;
+    position: absolute;
+    top:0px;
+    right: 780px;
+    padding: 15px 0;
+    border-left: 5px solid green;
+    border-radius: 5px ;
+    height: 66px;
+}
+.notify-first{
+    font-size: 1.8rem;
+}
+.notify-three{
+    padding: 0 8px;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+.notify-second{
+    padding: 0 18px;
+    h3{
+     font-size: 16px;
+    font-weight: 600;
+    color:rgb(37, 18, 18);
+    }
+    p{
+        margin: 0;
+        font-size: 14px;
+       // color:hsla(60, 90%, 45%, 0.2);
+    }
+}
