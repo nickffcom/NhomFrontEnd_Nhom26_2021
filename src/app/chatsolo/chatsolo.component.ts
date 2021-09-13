@@ -75,7 +75,7 @@ export class ChatsoloComponent implements OnInit {
   changeicon(): void {
     let sendicon = document.getElementById("sendMessage") as HTMLInputElement;
     let img = document.getElementById("ImgLike") as HTMLImageElement;
-    let btnek = document.getElementById("SEND") as HTMLButtonElement;
+    
     if (sendicon.value != "") {
       console.log("Đã nhảy vào khác null");
       //btnek.innerText="Send";
