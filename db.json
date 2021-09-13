@@ -1,0 +1,19 @@
+{
+    "account": [
+        {
+            "id": 1,
+            "username": "teo",
+            "type": "people"
+          },
+          {
+            "id": 2,
+            "username": "ti",
+            "type": "people"
+          },
+          {
+            "id": 3,
+            "username": "dau",
+            "type": "people"
+          }
+    ]
+  }
