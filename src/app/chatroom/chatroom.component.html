@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao Diện ChatRoom</title>
+    <link rel="stylesheet" href="chatroom.component.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div  class ="clearfix container "id="chat-container ">
+     
+        <div class="people-list" id="people-list">
+            <div class="search">
+              <input type="text" placeholder="search" />
+              <i class="fa fa-search"></i>
+            </div>
+            <ul class="list">
+              <li class="clearfix">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />
+                <div class="about">
+                  <div class="name">Vincent Porter</div>
+                  <div class="status">
+                    <i class="fa fa-circle online"></i> online
+                  </div>
+                </div>
+              </li>
+              
+              <li class="clearfix">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
+                <div class="about">
+                  <div class="name">Aiden Chavez</div>
+                  <div class="status">
+                    <i class="fa fa-circle offline"></i> left 7 mins ago
+                  </div>
+                </div>
+              </li>
+              
+              <li class="clearfix">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_03.jpg" alt="avatar" />
+                <div class="about">
+                  <div class="name">Mike Thomas</div>
+                  <div class="status">
+                    <i class="fa fa-circle online"></i> online
+                  </div>
+                </div>
+              </li>
+              
+             
+              
+            
+             
+              
+              
+              
+             
+              
+              
+              
+             
+            </ul>
+          </div>
+          <div class="chat">
+        <div class="chat-header clearfix">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
+            
+            <div class="chat-about">
+              <div class="chat-with">Chat with Vincent Porter</div>
+              <div class="chat-num-messages">already 1 902 messages</div>
+            </div>
+            <i class="fa fa-star"></i>
+          </div>
+          <div id="chat-message-list" style="display: flex; flex-direction: column;padding-bottom: 0;">
+           
+            
+        </div>
+        <!-- <div id="chat-form" >
+            <input style="width: 450px;margin-top: 20px;" type="text" placeholder="Type a messager"  #mess (keyup.enter)="sendMessage(mess)">
+            
+           
+
+        </div> -->
+           
+</div>
+        
+    </div>
+    
+</body>
+</html>
