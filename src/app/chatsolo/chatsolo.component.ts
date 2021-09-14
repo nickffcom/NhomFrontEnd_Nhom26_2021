@@ -102,5 +102,12 @@ export class ChatsoloComponent implements OnInit {
     }
 
   }
+  //tao room
+  createGroup(){
+    let roomname :any = prompt("Nhập tên phòng của bạn muốn tạo", '');
+    
+    
+     this.websocket.createRoom(roomname);
+  }
    
     }

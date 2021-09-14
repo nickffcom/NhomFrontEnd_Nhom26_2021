@@ -44,6 +44,22 @@ export class WebsocketService {
     // This will send a message to the server once a connection is made. Remember value is serialized with JSON.stringify by default!  
     this.ws.next(data);
   }
+  // crete room
+  createRoom(roomName:string|null){
+    let data={
+      "action": "onchat",
+      "data": {
+      "event": "CREATE_ROOM",
+      "data": {
+      "name": roomName
+     }
+      }
+
+    }
+    this.ws.next(data);
+
+
+  }
 
 
    getMessageFromServer() {
@@ -65,6 +81,13 @@ export class WebsocketService {
           console.log(msg);
           this.checkLogin(statuss,msg.mes);
           break;
+          case 'CREATE_ROOM':
+            // let status: string = Object.values(msg)[2] as string;
+            // let mes: string = Object.values(msg)[1] as string;
+           let status=msg.status;
+           let nameRoom=msg.data.name;
+           this.checkCreateRoom(status,nameRoom);
+            break;
           case 'SEND_CHAT':
 
              let r=msg.data.type;
@@ -161,6 +184,15 @@ export class WebsocketService {
         }
 
       }
+      checkCreateRoom(status:string,nameRoom:string){
+        if(status=="success"){
+         alert("Bạn đã tạo phòng thành công ");
+         localStorage.setItem('roomName',nameRoom);
+         this.router.navigate(['/chatroom']);
+        }else{
+          alert("Phòng này đã được tạo rồi");
+        }
+      }
       sendChatToServer(friend: string, mess: string) {
         let data = {
           "action": "onchat",
@@ -192,6 +224,7 @@ export class WebsocketService {
        
         this.ws.next(data);
       }
+      
 
     } // ngoặc kết thúc classss
 
