@@ -109,5 +109,11 @@ export class ChatsoloComponent implements OnInit {
     
      this.websocket.createRoom(roomname);
   }
+  joinGroup(){
+    let roomname:any  = prompt("Nhập tên phòng mà bạn muốn tìm kiếm", '');
+    this.websocket.joinGroup(roomname);
+    localStorage.setItem('roomName',roomname);
+
+}
    
     }

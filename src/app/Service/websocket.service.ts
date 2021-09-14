@@ -60,6 +60,24 @@ export class WebsocketService {
 
 
   }
+  // join room
+  joinGroup(roomName:string|null){
+    
+    let data={ 
+        "action": "onchat",
+        "data": {
+          "event": "JOIN_ROOM",
+          "data": {
+            "name": roomName
+          }
+        }
+
+    }
+    this.ws.next(data);
+  
+  
+
+}
 
 
    getMessageFromServer() {
@@ -88,6 +106,12 @@ export class WebsocketService {
            let nameRoom=msg.data.name;
            this.checkCreateRoom(status,nameRoom);
             break;
+            case 'JOIN_ROOM':
+              // let status: string = Object.values(msg)[2] as string;
+              // let mes: string = Object.values(msg)[1] as string;
+             let status2=msg.status;
+             this.checkJoinRoom(status2);
+              break;
           case 'SEND_CHAT':
 
              let r=msg.data.type;
@@ -192,6 +216,14 @@ export class WebsocketService {
         }else{
           alert("Phòng này đã được tạo rồi");
         }
+      }
+      checkJoinRoom(status:string){
+        if (status=="success") {
+          this.router.navigate(['/chatroom']);
+        } else {
+          alert("Phòng này không tồn tại")
+        }
+
       }
       sendChatToServer(friend: string, mess: string) {
         let data = {
