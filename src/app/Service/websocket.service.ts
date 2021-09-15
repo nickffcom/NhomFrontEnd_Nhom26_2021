@@ -133,6 +133,7 @@ export class WebsocketService {
                 linknode.style.margin="0";
                 linknode.style.marginTop="5px";
                 linknode.style.padding="10px";
+                linknode.style.fontSize="18px";
                 linknode.innerHTML+=message+"<br>";
                 chat.appendChild(linknode);
 
@@ -250,6 +251,7 @@ export class WebsocketService {
           linknode.style.marginTop="5px";
           linknode.style.padding="10px";
           linknode.style.textAlign="center";
+          linknode.style.fontSize="18px";
           linknode.innerHTML+="  <img src=\"../../assets/neymar4.jpg\" alt=\"\" style=\"width: 30px;height: 25px;border-radius: 50%;\">"+mess+"<br>";
             chat.append(linknode);
         

@@ -57,9 +57,17 @@ body {
 }
 .header__navbar-list-link {
     text-decoration: none;
+    padding: 10px;
+
     
 
     
+}
+.header__navbar-list-link:hover{
+    padding: 4px;
+    background-color: white;
+    cursor: pointer;
+
 }
 .header__navbar-list-item {
     padding-top: 35px;
@@ -251,6 +259,7 @@ body {
     height: 88px;
     margin-left: -33px;
     position: relative;
+    color: white;
    
 }
 .active {
@@ -440,6 +449,19 @@ html {
       right: 500px;
       animation: mymove3 ease-in-out 1s;
       
+
+  }
+  body{
+      background-image: url('https://www.laptop98.com/wp-content/uploads/2020/03/c-2-1024x576-1.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 2;
+  }
+  .header__chat-tool-search{
+      border-radius: 5px;
+  }
+  .header__chat-tool-search:hover{
+      background-color: #ccc;
 
   }
 
