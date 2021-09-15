@@ -57,7 +57,7 @@ export class ChatsoloComponent implements OnInit {
   }
   getID(){
     let a =document.getElementById(this.ID) as HTMLElement;
-    a.style.backgroundColor="silver";
+    a.style.backgroundColor="#b9a6a6";
   }
  
   addIcon(indexIcon: string | number): void {

@@ -214,7 +214,7 @@ body {
        height:350px;
     
             
-            padding:50px;
+            padding:20px;
             overflow:auto;
 }
 .container__phonebook-list {
@@ -388,5 +388,13 @@ html {
     height: 250px;
     top: 350px;
     left: 1400px;
-    background-color: red;
+    border-radius: 9px;
+    background-color: rgb(100, 94, 94);
+    color: white;
+    animation:  mymove ease-in 1s;
+  
 }
+@keyframes mymove {
+    from {transform : translateY(90px);}
+    to {transform: translateY(0);}
+  }
