@@ -52,7 +52,17 @@ export class ChatsoloComponent implements OnInit {
   }
   //du lieu input
   sendMessage(ele: HTMLInputElement){
-    this.websocket.sendChatToServer(this.friend.username, ele.value);
+    let a:string = ele.value;
+    console.log("Input là:"+a); 
+    if(a ==""){
+      ele.value="👌";
+     this.websocket.sendChatToServer(this.friend.username,ele.value);
+
+    }else{
+      console.log("Đã nhảy vô else");
+      this.websocket.sendChatToServer(this.friend.username, ele.value);
+    }
+    
     ele.value="";
   }
   getID(){
