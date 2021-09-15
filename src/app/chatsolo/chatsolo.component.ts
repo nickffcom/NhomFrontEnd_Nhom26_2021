@@ -20,6 +20,7 @@ export class ChatsoloComponent implements OnInit {
   listIconAlt:string[]=["🤩","😄","😌","😋","😏","😞","🙁","😒","😭","😘","😤","😡","🤬","🤢","🎃","🤑","🤒","😇","🤓","😥","🤭","🤤","🤧","🤮","🙄","👹","☠️","🤡","👿","👀","👩‍🏫","🙆‍","🧚","","","","","","","","","","","","","","","",""]
   ListIcon:Icons[]=[];
   public roomNamene="";
+  public searchroomNamene="";
   public user="";
   public ID:any;
   public check:boolean=false;
@@ -52,6 +53,7 @@ export class ChatsoloComponent implements OnInit {
       });
     });
     this.nonetaophong();
+    this.nonetimphong();
   }
   //du lieu input
   sendMessage(ele: HTMLInputElement){
@@ -126,10 +128,19 @@ export class ChatsoloComponent implements OnInit {
     console.log(this.roomNamene); 
     this.websocket.createRoom(this.roomNamene);
   }
+  searchRoomDialog(){
+    let roomname:any=document.getElementById("tenphongsearch") as HTMLInputElement;
+    this.searchroomNamene=roomname.value;
+    this.websocket.joinGroup(this.searchroomNamene);
+    localStorage.setItem('roomName',this.searchroomNamene);
+
+  }
   joinGroup(){
-    let roomname:any  = prompt("Nhập tên phòng mà bạn muốn tìm kiếm", '');
-    this.websocket.joinGroup(roomname);
-    localStorage.setItem('roomName',roomname);
+    // let roomname:any  = prompt("Nhập tên phòng mà bạn muốn tìm kiếm", '');
+    // this.websocket.joinGroup(roomname);
+    // localStorage.setItem('roomName',roomname);
+    let noneRoom=document.getElementById('dialog-search-room') as HTMLElement;
+    noneRoom.style.display="block";
 
 }
 // tao phong
@@ -138,8 +149,18 @@ nonetaophong(){
   noneRoom.style.display="none";
 
 }
+nonetimphong(){
+  let noneRoom=document.getElementById('dialog-search-room') as HTMLElement;
+  noneRoom.style.display="none";
+
+}
 huyDialog(){
   let noneRoom=document.getElementById('dialog-create-room') as HTMLElement;
+  noneRoom.style.display="none";
+
+}
+huyDialogSearch(){
+  let noneRoom=document.getElementById('dialog-search-room') as HTMLElement;
   noneRoom.style.display="none";
 
 }

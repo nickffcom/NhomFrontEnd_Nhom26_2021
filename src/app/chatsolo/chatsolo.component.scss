@@ -415,6 +415,9 @@ html {
   #tenphong{
       height: 25px;
   }
+  #tenphongsearch{
+    height: 25px;
+  }
   .btn-create-room{
       cursor: pointer;
   }
@@ -424,5 +427,19 @@ html {
   @keyframes mymove2 {
     from {transform : translateY(-90px);}
     to {transform: translateY(0);}
+  }
+  @keyframes mymove3 {
+    from {transform : translateX(200px);}
+    to {transform: translateY(0);}
+  }
+  #dialog-search-room{
+      background-color: royalblue;
+      height: 180px;
+      width: 205px;
+      position: absolute;
+      right: 500px;
+      animation: mymove3 ease-in-out 1s;
+      
+
   }
 
