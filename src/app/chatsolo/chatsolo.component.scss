@@ -250,7 +250,6 @@ body {
     justify-content: space-between;
     height: 88px;
     margin-left: -33px;
-    position: relative;
    
 }
 .active {
@@ -399,26 +398,4 @@ html {
     from {transform : translateY(90px);}
     to {transform: translateY(0);}
   }
-  @keyframes mymove2 {
-    from {transform : translateY(-90px);}
-    to {transform: translateY(0);}
-  }
-//   tao phong
-#createRoom{
-background-color: #22db60;
-width: 300px;
-height: 150px;
-border-radius: 10px;
-position: absolute;
-top: -20px;
-left: 200px;
-animation: mymove2 ease-in 1s;
-}
-.btn-createRoom{
-    cursor: pointer;
-    padding: 6px;
-}
-.btn-createRoom:hover{
-    background-color: #53735e;
-}
 
