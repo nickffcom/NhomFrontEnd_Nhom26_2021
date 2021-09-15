@@ -22,12 +22,15 @@ export class ChatsoloComponent implements OnInit {
 
   public user="";
   public ID:any;
+  public roomNamene="";
   public check:boolean=false;
   url: string = "http://localhost:3000/listfriend";
   constructor(private userService:UserService, private friendlistService: FriendService,private route: ActivatedRoute,private websocket: WebsocketService) { }
   public showicon:boolean=false;
   
   ngOnInit(): void {
+    this.nonetaophong();
+    this.nonesuccess();
    this.LoadIcon();
     //lay ten username de binding len html
     this.currentUser = this.userService.getCurrentUser();
@@ -104,15 +107,37 @@ export class ChatsoloComponent implements OnInit {
   }
   //tao room
   createGroup(){
-    let roomname :any = prompt("Nhập tên phòng của bạn muốn tạo", '');
+    // let roomname :any = prompt("Nhập tên phòng của bạn muốn tạo", '');
+    let noneRoom=document.getElementById('createRoom') as HTMLElement;
+    noneRoom.style.display="block";
+
     
     
-     this.websocket.createRoom(roomname);
+     
   }
+  createRoom2(){
+    let roomname:any=document.getElementById("tenphong") as HTMLInputElement;
+    this.roomNamene=roomname.value;
+    console.log(this.roomNamene); 
+    this.websocket.createRoom(this.roomNamene);
+
+  }
+ 
   joinGroup(){
     let roomname:any  = prompt("Nhập tên phòng mà bạn muốn tìm kiếm", '');
     this.websocket.joinGroup(roomname);
     localStorage.setItem('roomName',roomname);
+
+}
+// an dialog tao phong di
+nonetaophong(){
+  let noneRoom=document.getElementById('createRoom') as HTMLElement;
+  noneRoom.style.display="none";
+
+}
+nonesuccess(){
+  let noneRoom=document.getElementById('success-create') as HTMLElement;
+  noneRoom.style.display="none";
 
 }
    
