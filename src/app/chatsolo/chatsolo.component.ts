@@ -19,7 +19,7 @@ export class ChatsoloComponent implements OnInit {
   listFriend:TypeChat[]=[];
   listIconAlt:string[]=["🤩","😄","😌","😋","😏","😞","🙁","😒","😭","😘","😤","😡","🤬","🤢","🎃","🤑","🤒","😇","🤓","😥","🤭","🤤","🤧","🤮","🙄","👹","☠️","🤡","👿","👀","👩‍🏫","🙆‍","🧚","","","","","","","","","","","","","","","",""]
   ListIcon:Icons[]=[];
-
+  public roomNamene="";
   public user="";
   public ID:any;
   public check:boolean=false;
@@ -28,7 +28,9 @@ export class ChatsoloComponent implements OnInit {
   public showicon:boolean=false;
   
   ngOnInit(): void {
+    
    this.LoadIcon();
+   
     //lay ten username de binding len html
     this.currentUser = this.userService.getCurrentUser();
      this.user=this.currentUser?.username as string;
@@ -48,7 +50,8 @@ export class ChatsoloComponent implements OnInit {
         localStorage.setItem('friendName', this.friend.username);
         //them lich su chat
       });
-    })
+    });
+    this.nonetaophong();
   }
   //du lieu input
   sendMessage(ele: HTMLInputElement){
@@ -114,15 +117,30 @@ export class ChatsoloComponent implements OnInit {
   }
   //tao room
   createGroup(){
-    let roomname :any = prompt("Nhập tên phòng của bạn muốn tạo", '');
-    
-    
-     this.websocket.createRoom(roomname);
+    let noneRoom=document.getElementById('dialog-create-room') as HTMLElement;
+    noneRoom.style.display="block";
+  }
+  createRoomDialog(){
+    let roomname:any=document.getElementById("tenphong") as HTMLInputElement;
+    this.roomNamene=roomname.value;
+    console.log(this.roomNamene); 
+    this.websocket.createRoom(this.roomNamene);
   }
   joinGroup(){
     let roomname:any  = prompt("Nhập tên phòng mà bạn muốn tìm kiếm", '');
     this.websocket.joinGroup(roomname);
     localStorage.setItem('roomName',roomname);
+
+}
+// tao phong
+nonetaophong(){
+  let noneRoom=document.getElementById('dialog-create-room') as HTMLElement;
+  noneRoom.style.display="none";
+
+}
+huyDialog(){
+  let noneRoom=document.getElementById('dialog-create-room') as HTMLElement;
+  noneRoom.style.display="none";
 
 }
    

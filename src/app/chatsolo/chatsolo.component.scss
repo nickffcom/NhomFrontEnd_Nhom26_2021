@@ -250,6 +250,7 @@ body {
     justify-content: space-between;
     height: 88px;
     margin-left: -33px;
+    position: relative;
    
 }
 .active {
@@ -396,6 +397,32 @@ html {
 }
 @keyframes mymove {
     from {transform : translateY(90px);}
+    to {transform: translateY(0);}
+  }
+  #dialog-create-room{
+      position: absolute;
+      background-color: #53b99fe8;
+      left: 300px;
+      width: 205px;
+      top: -30px;
+      border-radius: 10px;
+      height: 180px;
+      animation: mymove2 ease-in-out 1s;
+  }
+  .btn-create-room{
+      padding: 10px;
+  }
+  #tenphong{
+      height: 25px;
+  }
+  .btn-create-room{
+      cursor: pointer;
+  }
+  .btn-create-room:hover{
+      background-color: #ccc;
+  }
+  @keyframes mymove2 {
+    from {transform : translateY(-90px);}
     to {transform: translateY(0);}
   }
 
