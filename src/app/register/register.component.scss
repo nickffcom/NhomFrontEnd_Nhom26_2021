@@ -77,6 +77,10 @@ margin-top: 2rem;
  display: flex;
  align-items: center;
 }
+@keyframes mymove{
+    from {transform : translateY(90px);}
+    to {transform: translateY(0);}
+}
 #notify-register{
     display: none;
     position: absolute;
@@ -86,6 +90,8 @@ margin-top: 2rem;
     border-left: 5px solid green;
     border-radius: 5px ;
     height: 66px;
+    animation: mymove ease-in 1s;
+    
 }
 .notify-first{
     font-size: 1.8rem;

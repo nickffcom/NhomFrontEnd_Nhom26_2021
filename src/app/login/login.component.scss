@@ -90,4 +90,13 @@ margin-top: 2rem;
     z-index: 3;
     border-radius: 10px;
     padding: 10px;
+    color: #09a509;
+    font-size: 18px;
+    font-weight: 700;
+    animation: mymove ease-in-out 1s;
 }
+@keyframes mymove{
+    from {transform : translateY(90px);}
+    to {transform: translateY(0);}
+}
+

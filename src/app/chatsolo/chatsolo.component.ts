@@ -50,6 +50,10 @@ export class ChatsoloComponent implements OnInit {
         this.friend = data;
         localStorage.setItem('friendName', this.friend.username);
         //them lich su chat
+             //them lich su chat
+             setTimeout(() => {
+              this.websocket.getHistoryChat(this.friend.username);
+            }, 500);
       });
     });
     this.nonetaophong();

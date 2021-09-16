@@ -29,6 +29,20 @@ export class WebsocketService {
       }
    this.ws.next(data);
    }
+   //historychat
+  getHistoryChat(name: string) {
+    let data = {
+      "action": "onchat",
+      "data": {
+        "event": "GET_PEOPLE_CHAT_MES",
+        "data": {
+          "name": name,
+          "page": 1
+        }
+      }
+    }
+    this.ws.next(data);
+  }
    
    LoginToServer(username: string, password: string) {
     let data = {
@@ -112,6 +126,45 @@ export class WebsocketService {
              let status2=msg.status;
              this.checkJoinRoom(status2);
               break;
+              case 'GET_PEOPLE_CHAT_MES':
+                let q = localStorage.getItem('friendName');
+                let u = localStorage.getItem('username');
+                let x = msg.data;
+                x.sort((a: any, b: any) => (Date.parse(a.createAt) > Date.parse(b.createAt)) ? 1 : ((Date.parse(b.createAt) > Date.parse(a.createAt)) ? -1 : 0));
+                for (let i = 0; i < x.length; i++) {
+                  if ((x[i].name == q || x[i].name == u) && (x[i].to == q || x[i].to == u)) {
+                    if (x[i].name == q) {
+                      var linknode = document.createElement("p");
+                      var chat = document.getElementById("content__chat") as HTMLElement ;
+                      linknode.style.alignSelf="flex-end";
+                      linknode.style.backgroundColor="#1877F2";
+                      linknode.style.borderRadius="50px";
+                      linknode.style.color="white";
+                      linknode.style.margin="0";
+                      linknode.style.marginTop="5px";
+                      linknode.style.padding="10px";
+                      linknode.style.textAlign="center";
+                      linknode.style.fontSize="18px";
+                      linknode.innerHTML+=x[i].mes+"<br>";
+                      chat.appendChild(linknode);
+                    } else if (x[i].name == u) {
+                      var linknode = document.createElement("p");
+                      var chat = document.getElementById("content__chat") as HTMLElement ;
+                      linknode.style.alignSelf="flex-start";
+                      linknode.style.backgroundColor="#CFD1D5";
+                      linknode.style.color="black"; 
+                      linknode.style.borderRadius="50px";
+                      linknode.style.margin="0";
+                      linknode.style.marginTop="5px";
+                      linknode.style.padding="10px";
+                      linknode.style.textAlign="center";
+                      linknode.style.fontSize="18px";
+                      linknode.innerHTML+="  <img src=\"../../assets/neymar4.jpg\" alt=\"\" style=\"width: 30px;height: 25px;border-radius: 50%;margin-right: 8px;\">"+x[i].mes+"<br>";
+                      chat.appendChild(linknode);
+                    }
+                  }
+                }
+                break;
               case 'SEND_CHAT':
            
           
@@ -134,7 +187,11 @@ export class WebsocketService {
                    linknode.style.margin="0";
                    linknode.style.marginTop="5px";
                    linknode.style.padding="10px";
+                   linknode.style.textAlign="center";
+                   linknode.style.fontSize="18px";
                    linknode.innerHTML+=message+"<br>";
+                  //  
+                  
                    chat.appendChild(linknode);
    
                    }
