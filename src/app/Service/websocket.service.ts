@@ -126,6 +126,8 @@ export class WebsocketService {
                   console.log("@@");       
                   var linknode = document.createElement("p");
                 var chat = document.getElementById("content__chat") as HTMLElement ;
+                var minichat =document.getElementById("chatmini") as HTMLElement;
+                minichat.innerHTML=message;
                 linknode.style.alignSelf="flex-end";
                 linknode.style.backgroundColor="#1877F2";
                 linknode.style.borderRadius="50px";
@@ -198,17 +200,26 @@ export class WebsocketService {
       if(status=="success"){
         let username=localStorage.getItem('username') as string;
         let password=localStorage.getItem('password') as string;
-        this.router.navigate(['/chatsolo']);
+        
+        // 
+        
+        let successlogin=document.getElementById("dialog-success") as HTMLElement;
+        successlogin.style.display="block";
+        // this.router.navigate(['/chatsolo']);
+
+        
         let user: User = new User(username, password);
         //parse user thanh string de luu local
       this.userService.setCurrentUser(user);
       // localStorage.removeItem('username');
       // localStorage.removeItem('password');
+      
        } else if (status == "error") {
         alert(""+msg)
         }
 
       }
+     
       checkCreateRoom(status:string,nameRoom:string){
         if(status=="success"){
          alert("Bạn đã tạo phòng thành công ");
@@ -252,7 +263,7 @@ export class WebsocketService {
           linknode.style.padding="10px";
           linknode.style.textAlign="center";
           linknode.style.fontSize="18px";
-          linknode.innerHTML+="  <img src=\"../../assets/neymar4.jpg\" alt=\"\" style=\"width: 30px;height: 25px;border-radius: 50%;\">"+mess+"<br>";
+          linknode.innerHTML+="  <img src=\"../../assets/neymar4.jpg\" alt=\"\" style=\"width: 30px;height: 25px;border-radius: 50%;margin-right: 8px;\">"+mess+"<br>";
             chat.append(linknode);
         
        

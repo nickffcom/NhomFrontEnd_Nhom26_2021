@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { WebsocketService } from '../Service/websocket.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { WebsocketService } from '../Service/websocket.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private ws: WebsocketService) { }
+  constructor(private ws: WebsocketService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,5 +26,10 @@ export class LoginComponent implements OnInit {
    
     this.ws.LoginToServer(username,password);
    }
+   navigateRoom(){
+    this.router.navigate(['/chatsolo']);
+
+   }
+ 
 
 }

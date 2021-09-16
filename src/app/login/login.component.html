@@ -6,20 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập</title>
     <link rel="stylesheet" href="login.component.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <h2>Welcome to AppChat</h2>
-       <div class="input-group">
-           <input type="text" id="username" required>
-           <label for="username">Username</label>
-       </div>
-       <div class="input-group">
-        <input type="password" id="password" required>
-        <label for="password">Password</label>
-    </div>
-        <button type="submit" (click)="login()" >Login</button>
-        <p>Don't have account ?<a [routerLink]="['/register']" routerLinkActive="router-link-active">Sign Up</a></p>
+    <div class="modal">
+        <div id="dialog-success">
+            <p>Bạn đã đăng nhập thành công <i class="fas fa-check-circle"></i></p>
+            <p>Bây giờ chúng ta chuyển sang trang chat solo</p>  
+            <button type="submit" (click)="navigateRoom()">ok</button>
+            
+        </div>
+        <div class="container">
+           
+            <h2>Welcome to AppChat</h2>
+           <div class="input-group">
+               <input type="text" id="username" required>
+               <label for="username">Username</label>
+           </div>
+           <div class="input-group">
+            <input type="password" id="password" required>
+            <label for="password">Password</label>
+        </div>
+            <button type="submit" (click)="login()" >Login</button>
+            <p>Don't have account ?<a [routerLink]="['/register']" routerLinkActive="router-link-active">Sign Up</a></p>
+        </div>
     </div>
     
 </body>
