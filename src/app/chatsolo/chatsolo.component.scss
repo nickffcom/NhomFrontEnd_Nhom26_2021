@@ -302,17 +302,18 @@ margin-left: 15px;
 .header__chat-tool-boder {
    margin-top: 30px;
    margin-left: 20px;
+  
 }
 
 .header__chat-tool-search {
-background-color: white;
+
 border-style: none;
 outline: none;
 cursor: pointer;
 }
 .header__chat-tool-icon {
     font-size: 25px;
-    color: #bbbbbe;
+  background-color: #F5F7FB;
 }
 :root {
     --white-color:#fff;
