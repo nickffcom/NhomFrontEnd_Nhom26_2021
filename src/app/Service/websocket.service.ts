@@ -112,36 +112,56 @@ export class WebsocketService {
              let status2=msg.status;
              this.checkJoinRoom(status2);
               break;
-          case 'SEND_CHAT':
-
-             let r=msg.data.type;
-             if(r==0){
-              console.log("chat solo");
-              let message = msg.data.mes;
-              let name = msg.data.name;
-              let namelocal = localStorage.getItem('friendName');
-              
-            
-                if(namelocal==name){
-                  console.log("@@");       
-                  var linknode = document.createElement("p");
-                var chat = document.getElementById("content__chat") as HTMLElement ;
-                var minichat =document.getElementById("chatmini") as HTMLElement;
-                minichat.innerHTML=message;
-                linknode.style.alignSelf="flex-end";
-                linknode.style.backgroundColor="#1877F2";
-                linknode.style.borderRadius="50px";
-                linknode.style.color="white";
-                linknode.style.margin="0";
-                linknode.style.marginTop="5px";
-                linknode.style.padding="10px";
-                linknode.style.fontSize="18px";
-                linknode.innerHTML+=message+"<br>";
-                chat.appendChild(linknode);
-
+              case 'SEND_CHAT':
+           
+          
+                let r=msg.data.type;
+                if(r==0){
+                 console.log("chat solo");
+                 let message = msg.data.mes;
+                 let name = msg.data.name;
+                 let namelocal = localStorage.getItem('friendName');
+                 
+               
+                   if(namelocal==name){
+                     console.log("@@");       
+                     var linknode = document.createElement("p");
+                   var chat = document.getElementById("content__chat") as HTMLElement ;
+                   linknode.style.alignSelf="flex-end";
+                   linknode.style.backgroundColor="#1877F2";
+                   linknode.style.borderRadius="50px";
+                   linknode.style.color="white";
+                   linknode.style.margin="0";
+                   linknode.style.marginTop="5px";
+                   linknode.style.padding="10px";
+                   linknode.innerHTML+=message+"<br>";
+                   chat.appendChild(linknode);
+   
+                   }
+   
+                }else{
+                  let mess=msg.data.mes;
+                  let name=msg.data.name;  
+                  console.log("chatroom");
+                  console.log(mess+"mess");
+                  console.log(name+"mess");
+                 var linknode = document.createElement("p");  
+                 var chat = document.getElementById("chat-message-list") as HTMLElement ;
+                 linknode.style.alignSelf="flex-end";
+                 linknode.style.backgroundColor="#48cdea";
+                 linknode.style.color="white"; 
+                 linknode.style.borderRadius="50px";
+                 linknode.style.margin="0";
+                 linknode.style.fontSize="20px"
+                 linknode.style.marginTop="5px";
+                 linknode.style.padding="17px";
+                 linknode.style.textAlign="center";
+                 linknode.innerHTML+=mess+":"+name;  
+                 chat.appendChild(linknode);
                 }
-
-             }
+                   
+                 
+            
             break;
             
         
@@ -268,6 +288,41 @@ export class WebsocketService {
         
        
         this.ws.next(data);
+      }
+      // chat room
+      sendChatRoomToServer(mess:string,roomName:string){
+        let data={
+          
+            "action": "onchat",
+            "data": {
+              "event": "SEND_CHAT",
+              "data": {
+                "type": "room",
+                "to": roomName,
+                "mes": mess
+              }
+            }
+          }
+          console.log(roomName+""+mess)
+          var linknode = document.createElement("p");
+          var chat = document.getElementById("chat-message-list") as HTMLElement ;
+          linknode.style.alignSelf="flex-start";
+          linknode.style.backgroundColor="#CFD1D5";
+          linknode.style.color="black"; 
+          linknode.style.borderRadius="50px";
+          linknode.style.margin="0";
+          linknode.style.fontSize="20px"
+          linknode.style.marginTop="5px";
+          linknode.style.padding="17px";
+          linknode.style.textAlign="center";
+          linknode.innerHTML+="  <img src=\"../../assets/neymar4.jpg\" alt=\"\" style=\"width: 30px;height: 25px;border-radius: 50%;\">"+mess;
+          chat.appendChild(linknode);
+  
+  
+          this.ws.next(data);
+  
+        
+  
       }
       
 
