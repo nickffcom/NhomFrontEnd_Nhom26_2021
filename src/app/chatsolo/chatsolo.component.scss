@@ -111,8 +111,8 @@ body {
     background-color: rgb(14, 11, 11);
     position: absolute;
     border-radius: 5px;
-    top: 6px;
-    left: -21px;
+    top: -11px;
+    left: -1px;
   
     display: none;
     
@@ -153,6 +153,7 @@ body {
         font-weight: 400;
         color: var(--text-color);
         margin-left: 28px;
+        margin-top: 30px;
     }
     .header__search-icon {
         font-size: 25px;
@@ -224,6 +225,7 @@ body {
             
             padding:20px;
             overflow:auto;
+            margin-top: 29px;
 }
 .container__phonebook-list {
     list-style: none;
@@ -234,6 +236,7 @@ body {
     display: flex;
     padding-top: 35px;
     border-radius: 10px;
+    
 }
 .container__phonebook-fram {
     width: 30px;
@@ -281,7 +284,7 @@ body {
     padding-top: -2px;
 }
 .header__chat-name-fullname{
-    color: var(--text-color);
+    color: black;
     font-weight: 400;
     font-size: 18px;
    
@@ -305,14 +308,15 @@ margin-left: 15px;
 }
 
 .header__chat-tool-search {
-background-color: white;
+
 border-style: none;
 outline: none;
 cursor: pointer;
 }
 .header__chat-tool-icon {
     font-size: 25px;
-    color: #bbbbbe;
+    background-color: #f5f7fb;
+    padding: 9px;
 }
 :root {
     --white-color:#fff;
@@ -396,13 +400,20 @@ html {
     position: absolute;
     width: 250px;
     height: 250px;
-    top: 350px;
-    left: 1400px;
+    border: 1px solid;
+    top: 317px;
+    right: 18px;
     border-radius: 9px;
-    background-color: rgb(100, 94, 94);
-    color: white;
+    background-color: white;
+   
+    
     animation:  mymove ease-in 1s;
   
+}
+.icon-emoji{
+    font-size: 2.4rem;
+    font: 500;
+    cursor: pointer;
 }
 @keyframes mymove {
     from {transform : translateY(90px);}
@@ -411,12 +422,13 @@ html {
   #dialog-create-room{
       position: absolute;
       background-color: #53b99fe8;
-      left: 300px;
-      width: 205px;
-      top: -30px;
+      left: 100px;
+      width: 400px;
+      top: 0px;
       border-radius: 10px;
-      height: 180px;
+      height: 250px;
       animation: mymove2 ease-in-out 1s;
+ 
   }
   .btn-create-room{
       padding: 10px;
@@ -442,12 +454,14 @@ html {
     to {transform: translateY(0);}
   }
   #dialog-search-room{
-      background-color: royalblue;
-      height: 180px;
-      width: 205px;
-      position: absolute;
-      right: 500px;
-      animation: mymove3 ease-in-out 1s;
+    position: absolute;
+    background-color: #53b99fe8;
+    left: 100px;
+    width: 400px;
+    top: 0px;
+    border-radius: 10px;
+    height: 250px;
+    animation: mymove2 ease-in-out 1s;
       
 
   }
@@ -459,9 +473,16 @@ html {
   }
   .header__chat-tool-search{
       border-radius: 5px;
+      background-color: #f5f7fb;
   }
   .header__chat-tool-search:hover{
       background-color: #ccc;
 
+  }
+  .Imagenek{
+      padding: 6px;
+  }
+  .icon-padding{
+      padding: 6px;
   }
 

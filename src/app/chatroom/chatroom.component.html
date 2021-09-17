@@ -18,9 +18,9 @@
             </div>
             <ul class="list">
               <li class="clearfix">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />
+                <img src="../../assets/neymar4.jpg" alt="avatar" />
                 <div class="about">
-                  <div class="name">Vincent Porter</div>
+                  <div class="name">Teo</div>
                   <div class="status">
                     <i class="fa fa-circle online"></i> online
                   </div>
@@ -30,9 +30,9 @@
               <li class="clearfix">
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
                 <div class="about">
-                  <div class="name">Aiden Chavez</div>
+                  <div class="name">Ti</div>
                   <div class="status">
-                    <i class="fa fa-circle offline"></i> left 7 mins ago
+                    <i class="fa fa-circle online"></i> online
                   </div>
                 </div>
               </li>
@@ -40,7 +40,7 @@
               <li class="clearfix">
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_03.jpg" alt="avatar" />
                 <div class="about">
-                  <div class="name">Mike Thomas</div>
+                  <div class="name">Dau</div>
                   <div class="status">
                     <i class="fa fa-circle online"></i> online
                   </div>
@@ -63,11 +63,11 @@
           </div>
           <div class="chat">
         <div class="chat-header clearfix">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
+            <img src="../../assets/neymar4.jpg" alt="avatar" />
             
             <div class="chat-about">
-              <div class="chat-with">Chat with Vincent Porter</div>
-              <div class="chat-num-messages">already 1 902 messages</div>
+              <div class="chat-with">Teo</div>
+              <div class="chat-num-messages">Đang hoạt động</div>
             </div>
             <i class="fa fa-star"></i>
           </div>
@@ -76,9 +76,10 @@
             
         </div>
         <div id="chat-form" >
-            <input id="sendMessage" style="width: 345px;margin-top: 20px;display: flex;" type="text" placeholder="Type a messager"  #mess (keyup.enter)="sendMessage(mess) " (click)="hidden()" (keyup)="changeicon()" editor/>
+            <input  id="sendMessage" style="width: 355px;"  type="text" placeholder="Type a messager"  #mess (keyup.enter)="sendMessage(mess) " (click)="hidden()" (keyup)="changeicon()" editor/>
             <div class="data-icon" (click)="enableorDisableIcon()">
-              <i class="fas fa-comments fa-2x"></i>
+              <i  class="far fa-smile-wink icon-emoji" style="margin-left: 6px;font-size: 30px;"></i>
+              
             </div>
             <!-- khung chat -->
             <div *ngIf="showicon">

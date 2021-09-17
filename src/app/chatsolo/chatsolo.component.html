@@ -12,12 +12,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />  
     <link rel="stylesheet" href="chatsolo.component.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">\
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <div class="grid__row">
-        <div class="grid__column-1">
+    <div class="row container">
+        <div class="col-2">
             <header class="header__navbar">
                 <div class="header__navbar-img">
                     <a href="" class="header__navbar-list-link">
@@ -104,7 +114,7 @@
                 </a>
             </div>
         </div>
-        <div class="grid__column-3">
+        <div class="col-sm-3">
           <div class="container_search">
          <div class="header__search">
             <div class="header__search-title">
@@ -130,7 +140,7 @@
     
     
    <div >
-    <li  id="{{user.id}}" (click)="getID()" [class.changestyle]="check"    class="container__phonebook-item" *ngFor="let user of listFriend" style="width: 95%;height: 67px;" >
+    <li  id="{{user.id}}" (click)="getID()" [class.changestyle]="check"    class="container__phonebook-item" *ngFor="let user of listFriend" style="width: 95%;height: 90px;" >
         <div class="container__phonebook-fram" >
         <span class="container__phonebook-name" style="border-radius: 50%;position: relative;"><img id="neymar" src="../../assets/neymar4.jpg" alt=""  style="border-radius: 50%;width: 44px;height: 44px;">
            
@@ -159,7 +169,7 @@
     
       </div>
       </div>
-      <div class="grid__column-8">
+      <div class="col-sm-7">
           <div class="header__chat" >
               <div class="header__chat-name">
                   <div class="header__chat-name-img">
@@ -168,7 +178,7 @@
                 <div class="header__chat-name-div">
                 <span class="header__chat-name-fullname">{{user}}</span>
                 <div class="active"></div>
-                <div style="position: absolute;bottom: 0px;">Đang hoạt động</div>
+                <div style="position: absolute;bottom: 0px;color: black;">Đang hoạt động</div>
             </div>
                 
     
@@ -193,20 +203,36 @@
                 <!-- Dialog Search -->
                 <div id="dialog-search-room">
                     <p style="font-size: 16px;"><i class="far fa-comment-dots"></i> Bạn muốn tìm phòng có tên là </p>
-                    <input type="text" name="" id="tenphongsearch">
+                    <!-- <input type="text" name="" id="tenphongsearch">
                     <div class="container-search-room">
-                        <button class="btn-create-room" type="submit" (click)="searchRoomDialog()">Tìm phòng</button>
-                        <button class="btn-create-room" type="submit" (click)="huyDialogSearch()">Hủy</button>
-                    </div>
+                        <button class="btn btn-primary" type="submit" (click)="searchRoomDialog()">Tìm phòng</button>
+                        <button class="btn btn-danger" type="submit" (click)="huyDialogSearch()">Hủy</button>
+                    </div> -->
+                 
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Tên phòng</label>
+                        <input type="text" class="form-control" id="tenphongsearch" aria-describedby="emailHelp" placeholder="Enter name Room">
+                        <small id="emailHelp" class="form-text text-muted">Tên phòng là</small>
+                        <button class="btn btn-primary" type="submit" (click)="searchRoomDialog()">Tìm phòng</button>
+                        <button class="btn btn-danger" type="submit" (click)="huyDialogSearch()">Hủy</button>
+                      </div>
+
                 </div>
                 <!-- hien thi dialog create Room -->
                 <div id="dialog-create-room">
                     <p style="font-size: 16px;"><i class="far fa-comment-dots"></i> Bạn muốn tạo phòng có tên là </p>
-                    <input type="text" name="" id="tenphong">
+                    <!-- <input type="text" name="" id="tenphong">
                     <div class="container-create-room">
-                        <button class="btn-create-room" type="submit" (click)="createRoomDialog()">Tạo phòng</button>
-                        <button class="btn-create-room" type="submit" (click)="huyDialog()">Hủy</button>
-                    </div>
+                        <button class="btn btn-primary" type="submit" (click)="createRoomDialog()">Tạo phòng</button>
+                        <button class="btn btn-danger" type="submit" (click)="huyDialog()">Hủy</button>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Tên phòng</label>
+                        <input type="text" class="form-control" id="tenphong" aria-describedby="emailHelp" placeholder="Enter name Room">
+                        <small id="emailHelp" class="form-text text-muted">Tên phòng là</small>
+                        <button class="btn btn-primary" type="submit" (click)="createRoomDialog()">Tạo phòng</button>
+                        <button class="btn btn-danger" type="submit" (click)="huyDialog()">Hủy</button>
+                      </div>
                 </div>
                 <!-- end -->
             </div>
@@ -220,8 +246,8 @@
             <div class="inputgroup"  style="display: flex;">
                 <input type="text" width="100%" style="margin-top: 9px;width: 91%;padding: 10px;outline: none;" id="sendMessage" #mess (keyup.enter)="sendMessage(mess)" (click)="hidden()" (keyup)="changeicon()" editor/>
                 <!-- show icom -->
-                <div class="data-icon" (click)="enableorDisableIcon()" style="color: white;" >
-                    <i style="font-size:1.4rem;margin:15px 8px" class="fas fa-comments"></i>
+                <div class="data-icon" (click)="enableorDisableIcon()" style="color: black;" >
+                    <i style="font-size:2.4rem;margin:15px 8px" class="far fa-smile-wink icon-emoji"></i>
                 </div>
                 <div *ngIf="showicon">
                     <div class="khungchat">
@@ -229,7 +255,11 @@
                     <div class="clearfix">
                      <div class="khungchat-icon" role="button" >
 
-                      <img src="{{icon.src}}" alt="{{icon.ALT}}"  width="28px" height="28px" id="Imagenek" *ngFor="let icon of ListIcon;index as i" (click)=addIcon(i) (click)="changeicon()"  >
+                        <div class="khungchat-icon" role="button" >
+
+                            <img src="{{icon.src}}" alt="{{icon.ALT}}"  width="28px" height="28px" id="Imagenek" *ngFor="let icon of ListIcon;index as i" (click)=addIcon(i) (click)="changeicon()"  >
+      
+                           </div>
 
                      </div>
 

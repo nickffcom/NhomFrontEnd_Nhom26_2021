@@ -88,6 +88,7 @@ html{
 #chat-title,
 #chat-form{
   background: #eee;
+  position: relative;
 }
 #chat-title{
   display: grid;
@@ -500,8 +501,8 @@ body{
   background-color: #ccc;
   height: 215px;
   position: absolute;
-  bottom: 110px;
-  right: 480px;
+  bottom: 56px;
+  right: 19px;
   width: 207px;
   padding: 2px;
   border-radius: 6px;
@@ -510,4 +511,20 @@ body{
 #Imagenek{
   width: 28px;
   height: 28px;
+}
+#sendMessage{
+  width: 355px;
+  border:2px solid #aaa;
+  border-radius:4px;
+  margin:8px 0;
+  outline:none;
+  padding:8px;
+  box-sizing:border-box;
+  transition:.3s;
+  position: absolute;
+}
+
+#sendMessage:focus{
+  border-color:dodgerBlue;
+  box-shadow:0 0 8px 0 dodgerBlue;
 }
