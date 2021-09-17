@@ -219,6 +219,7 @@
             </div>
             <div class="inputgroup"  style="display: flex;">
                 <input type="text" width="100%" style="margin-top: 9px;width: 91%;padding: 10px;outline: none;" id="sendMessage" #mess (keyup.enter)="sendMessage(mess)" (click)="hidden()" (keyup)="changeicon()" editor/>
+                <!-- show icom -->
                 <div class="data-icon" (click)="enableorDisableIcon()" style="color: white;" >
                     <i style="font-size:1.4rem;margin:15px 8px" class="fas fa-comments"></i>
                 </div>
@@ -236,7 +237,8 @@
 
                     </div>
 
-                   </div>
+                </div>
+                <!-- end khung icon -->
                    
                 <button id="SEND" style="padding: 10px; cursor: pointer;color: darkcyan;" (click)="sendMessage(mess)" >
                   
