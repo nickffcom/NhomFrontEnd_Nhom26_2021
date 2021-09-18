@@ -513,7 +513,7 @@ body{
   height: 28px;
 }
 #sendMessage{
-  width: 355px;
+  width: 411px;
   border:2px solid #aaa;
   border-radius:4px;
   margin:8px 0;
@@ -531,4 +531,20 @@ body{
 }
 .icon-emoji{
   margin-top: -12px;
+}
+.icon-header i{
+  padding: 0 15px;
+  color: blue;
+
+}
+.icon-header i:hover{
+  cursor: pointer;
+}
+.icon-header{
+  width: 50%;
+  float: right;
+  padding-left: 107px;
+}
+.chat-header{
+  width: 590px;
 }

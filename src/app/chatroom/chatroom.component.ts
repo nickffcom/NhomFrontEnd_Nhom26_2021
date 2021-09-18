@@ -18,14 +18,22 @@ export class ChatroomComponent implements OnInit {
     this.LoadIcon();
   }
   sendMessage(ele: HTMLInputElement){
-    //tao the img
-    let roomName=localStorage.getItem('roomName') as string;
+    let a:string = ele.value;
+    // console.log("Input là:"+a); 
+    if(a ==""){
+      ele.value="👌";
+      let roomName=localStorage.getItem('roomName') as string;
+      this.websocket.sendChatRoomToServer(ele.value,roomName);
+      ele.value="";
+
+    }else{
+      console.log("Đã nhảy vô else");
+      let roomName=localStorage.getItem('roomName') as string;
+      this.websocket.sendChatRoomToServer(ele.value,roomName);
+      ele.value="";
+    }
     
-    
-    this.websocket.sendChatRoomToServer(ele.value,roomName);
-    
-     
-    ele.value="";
+  
 }
 
 addIcon(indexIcon: string | number): void {

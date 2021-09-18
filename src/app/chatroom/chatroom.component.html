@@ -16,7 +16,7 @@
               <input type="text" placeholder="search" />
               <i class="fa fa-search"></i>
             </div>
-            <ul class="list">
+            <ul class="list list-people" style="list-style: none;">
               <li class="clearfix">
                 <img src="../../assets/neymar4.jpg" alt="avatar" />
                 <div class="about">
@@ -69,16 +69,22 @@
               <div class="chat-with">Teo</div>
               <div class="chat-num-messages">Đang hoạt động</div>
             </div>
-            <i class="fa fa-star"></i>
+           <div class="icon-header">
+            <i class="fas fa-phone-square-alt fa-2x"></i>
+            <i class="fas fa-video fa-2x"></i>
+            <i class="fas fa-times fa-2x"></i>
+            
+
+           </div>
           </div>
           <div id="chat-message-list" style="display: flex; flex-direction: column;padding-bottom: 0;">
            
             
         </div>
         <div id="chat-form" >
-            <input  id="sendMessage" style="width: 355px;padding-bottom: 15px;"  type="text" placeholder="Type a messager"  #mess (keyup.enter)="sendMessage(mess) " (click)="hidden()" (keyup)="changeicon()" editor/>
+            <input  id="sendMessage" style="width: 411px;padding-bottom: 15px;"  type="text" placeholder="Type a messager"  #mess (keyup.enter)="sendMessage(mess) " (click)="hidden()" (keyup)="changeicon()" editor/>
             <div class="data-icon" (click)="enableorDisableIcon()">
-              <i  class="far fa-smile-wink icon-emoji" style="margin-left: 6px;font-size: 30px;"></i>
+              <i  class="far fa-smile-wink icon-emoji" style="margin-left: 60px;font-size: 30px;"></i>
               
             </div>
             <!-- khung chat -->
@@ -97,7 +103,7 @@
               </div>
 
           </div>
-          <button id="SEND" style="padding: 10px; cursor: pointer;color: darkcyan;position: absolute;left: 389px;" (click)="sendMessage(mess)" >
+          <button id="SEND" style="padding: 10px; cursor: pointer;color: darkcyan;position: absolute;left: 442px;" (click)="sendMessage(mess)" >
                   
             <img  id="ImgLike"src="../../assets/like.png" style="width: 28px;height:28px;" alt="">
             
